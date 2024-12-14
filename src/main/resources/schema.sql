@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS ITEM (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(250) NOT NULL,
+    description VARCHAR(250) NOT NULL,
+    price DECIMAL(12,2) NOT NULL,
+    imgUrl VARCHAR(500) NOT NULL,
+    quantity INT NOT NULL,
+    boughtOn TIMESTAMP,
+    listedOn TIMESTAMP,
+    createdOn TIMESTAMP,
+    PRIMARY KEY (id)
+);
