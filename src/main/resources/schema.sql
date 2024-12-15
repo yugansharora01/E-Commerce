@@ -3,9 +3,10 @@ CREATE TABLE IF NOT EXISTS item (
     name VARCHAR(250) NOT NULL,
     description VARCHAR(250) NOT NULL,
     price DECIMAL(12,2) NOT NULL,
-    imgUrl VARCHAR(500) NOT NULL,
+    img_url VARCHAR(500) NOT NULL,
     quantity INT NOT NULL,
-    boughtOn TIMESTAMP,
-    listedOn TIMESTAMP,
-    createdOn TIMESTAMP
+    bought_on TIMESTAMP,
+    listed_on TIMESTAMP,
+    created_on TIMESTAMP NOT NULL DEFAULT current_timestamp,
+    version INT
 );

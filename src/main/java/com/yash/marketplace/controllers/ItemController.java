@@ -35,16 +35,17 @@ public class ItemController {
 
     @PostMapping("/create")
     void createItem(@RequestBody Item newItem){
-        itemRepository.create(newItem);
+        itemRepository.save(newItem);
     }
 
     @DeleteMapping("/{id}")
     public void deleteItem(@PathVariable Integer id){
-        itemRepository.delete(id);
+        Optional<Item> item = itemRepository.findById(id);
+        item.ifPresent(itemRepository::delete);
     }
 
     @PutMapping("/update/{id}")
     public void updateItem(@PathVariable Integer id, @NotNull @RequestBody Item updatedItem){
-        itemRepository.update((updatedItem));
+        itemRepository.save((updatedItem));
     }
 }
