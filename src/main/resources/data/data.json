@@ -1,0 +1,85 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with USB receiver.",
+      "price": 25.99,
+      "imgUrl": "https://example.com/images/mouse.jpg",
+      "quantity": 50
+    },
+    {
+      "id": "2",
+      "name": "Mechanical Keyboard",
+      "description": "RGB mechanical keyboard with tactile switches.",
+      "price": 79.99,
+      "imgUrl": "https://example.com/images/keyboard.jpg",
+      "quantity": 30
+    },
+    {
+      "id": "3",
+      "name": "Gaming Headset",
+      "description": "Noise-cancelling gaming headset with surround sound.",
+      "price": 49.99,
+      "imgUrl": "https://example.com/images/headset.jpg",
+      "quantity": 20
+    },
+    {
+      "id": "4",
+      "name": "USB-C Charger",
+      "description": "Fast-charging USB-C charger with multiple ports.",
+      "price": 19.99,
+      "imgUrl": "https://example.com/images/charger.jpg",
+      "quantity": 40
+    },
+    {
+      "id": "5",
+      "name": "Smartphone Stand",
+      "description": "Adjustable aluminum smartphone stand for desk.",
+      "price": 15.49,
+      "imgUrl": "https://example.com/images/stand.jpg",
+      "quantity": 100
+    },
+    {
+      "id": "6",
+      "name": "Portable SSD",
+      "description": "1TB portable SSD with USB 3.2 support.",
+      "price": 129.99,
+      "imgUrl": "https://example.com/images/ssd.jpg",
+      "quantity": 25
+    },
+    {
+      "id": "7",
+      "name": "Webcam",
+      "description": "HD webcam with built-in microphone for video calls.",
+      "price": 45.99,
+      "imgUrl": "https://example.com/images/webcam.jpg",
+      "quantity": 70
+    },
+    {
+      "id": "8",
+      "name": "External Hard Drive",
+      "description": "2TB external hard drive with USB 3.0.",
+      "price": 89.99,
+      "imgUrl": "https://example.com/images/harddrive.jpg",
+      "quantity": 35
+    },
+    {
+      "id": "9",
+      "name": "Bluetooth Speaker",
+      "description": "Portable Bluetooth speaker with 10-hour battery life.",
+      "price": 39.99,
+      "imgUrl": "https://example.com/images/speaker.jpg",
+      "quantity": 60
+    },
+    {
+      "id": "10",
+      "name": "Laptop Cooling Pad",
+      "description": "Silent laptop cooling pad with adjustable fan speed.",
+      "price": 29.99,
+      "imgUrl": "https://example.com/images/coolingpad.jpg",
+      "quantity": 45
+    }
+  ]
+
+}

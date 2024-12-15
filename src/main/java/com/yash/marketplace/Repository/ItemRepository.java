@@ -27,35 +27,35 @@ public class ItemRepository {
     }
 
     public Optional<Item> findById(Integer id){
-        return jdbcClient.sql("SELECT * FROM ITEM WHERE id = :id")
+        return jdbcClient.sql("SELECT * FROM item WHERE id = :id")
                 .param("id",id)
                 .query(Item.class)
                 .optional();
     }
 
     public void create(@NotNull Item item){
-        int updated = jdbcClient.sql("INSERT INTO ITEM(id, name, description, price, imgUrl, quantity,createdOn) VALUES (?,?,?,?,?,?,?)")
-                .params(List.of(item.getId(),item.getName(),item.getDescription(),item.getPrice(),item.getImgUrl(),item.getQuantity(),item.getCreatedOn()))
+        int updated = jdbcClient.sql("INSERT INTO item(name, description, price, imgUrl, quantity,createdOn) VALUES (?,?,?,?,?,?)")
+                .params(List.of(item.getName(),item.getDescription(),item.getPrice(),item.getImgUrl(),item.getQuantity(),item.getCreatedOn()))
                 .update();
         Assert.state(updated == 1,"Failed to create item " + item.getName());
     }
 
     public void update(@NotNull Item item){
-        int updated = jdbcClient.sql("UPDATE ITEM SET name = ?, description = ?, price = ?, imgUrl = ?, quantity = ?,boughtOn = ?,listedOn = ? WHERE id = :id")
+        int updated = jdbcClient.sql("UPDATE item SET name = ?, description = ?, price = ?, imgUrl = ?, quantity = ?,boughtOn = ?,listedOn = ? WHERE id = :id")
                 .params(List.of(item.getName(),item.getDescription(),item.getPrice(),item.getImgUrl(),item.getQuantity(),item.getBoughtOn(), item.getListedOn(),item.getId()))
                 .update();
         Assert.state(updated == 1,"Failed to update item " + item.getName());
     }
 
     public void delete(Integer id){
-        int deleted = jdbcClient.sql("DELETE FROM ITEM WHERE id = :id")
+        int deleted = jdbcClient.sql("DELETE FROM item WHERE id = :id")
                 .param("id",id)
                 .update();
         Assert.state(deleted == 1,"Failed to delete " + id);
     }
 
     public int count() {
-        return jdbcClient.sql("SELECT COUNT(*) FROM ITEM").query(Integer.class).single();
+        return jdbcClient.sql("SELECT COUNT(*) FROM item").query(Integer.class).single();
     }
 
     public void saveAll(List<Item> items){

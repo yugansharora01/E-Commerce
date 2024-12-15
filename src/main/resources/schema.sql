@@ -1,5 +1,5 @@
-CREATE TABLE IF NOT EXISTS ITEM (
-    id INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS item (
+    id SERIAL PRIMARY KEY,
     name VARCHAR(250) NOT NULL,
     description VARCHAR(250) NOT NULL,
     price DECIMAL(12,2) NOT NULL,
@@ -7,6 +7,5 @@ CREATE TABLE IF NOT EXISTS ITEM (
     quantity INT NOT NULL,
     boughtOn TIMESTAMP,
     listedOn TIMESTAMP,
-    createdOn TIMESTAMP,
-    PRIMARY KEY (id)
+    createdOn TIMESTAMP
 );
