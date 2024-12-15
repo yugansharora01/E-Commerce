@@ -34,7 +34,7 @@ public class ItemRepository {
     }
 
     public void create(@NotNull Item item){
-        int updated = jdbcClient.sql("INSERT INTO ITEM(`id, name, description, price, imgUrl, quantity,createdOn`) values(?,?,?,?,?,?,?")
+        int updated = jdbcClient.sql("INSERT INTO ITEM(id, name, description, price, imgUrl, quantity,createdOn) VALUES (?,?,?,?,?,?,?)")
                 .params(List.of(item.getId(),item.getName(),item.getDescription(),item.getPrice(),item.getImgUrl(),item.getQuantity(),item.getCreatedOn()))
                 .update();
         Assert.state(updated == 1,"Failed to create item " + item.getName());
@@ -52,5 +52,13 @@ public class ItemRepository {
                 .param("id",id)
                 .update();
         Assert.state(deleted == 1,"Failed to delete " + id);
+    }
+
+    public int count() {
+        return jdbcClient.sql("SELECT COUNT(*) FROM ITEM").query(Integer.class).single();
+    }
+
+    public void saveAll(List<Item> items){
+        items.forEach(this::create);
     }
 }
