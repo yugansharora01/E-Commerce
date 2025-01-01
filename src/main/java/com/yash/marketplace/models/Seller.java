@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.NaturalId;
 
 import java.util.List;
 
@@ -24,4 +25,14 @@ public class Seller {
 
     @JsonIgnore
     private List<Product> products;
+    private String name;
+
+    @NaturalId
+    private String email;
+    private String phoneNumber;
+    private String address;
+    private String city;
+    private String state;
+    private String country;
+    private String zipCode;
 }

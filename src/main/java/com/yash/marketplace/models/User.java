@@ -23,4 +23,10 @@ public class User {
     private String email;
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
+    @OneToMany(mappedBy = "user")
+    private List<Wishlist> wishlists;
+    @OneToMany(mappedBy = "user")
+    private List<Reviews> reviews;
+    @OneToMany(mappedBy = "user")
+    private List<Address> addresses;
 }
